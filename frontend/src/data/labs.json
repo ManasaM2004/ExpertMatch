@@ -1,0 +1,66 @@
+[
+  {
+    "id": "L1",
+    "subject": "AI",
+    "date": "2025-05-21",
+    "session": "9 AM - 12 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L2",
+    "subject": "DSA",
+    "date": "2025-05-21",
+    "session": "3 PM - 6 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L3",
+    "subject": "ML",
+    "date": "2025-05-21",
+    "session": "12 PM - 3 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L4",
+    "subject": "OS",
+    "date": "2025-05-22",
+    "session": "9 AM - 12 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L5",
+    "subject": "Networks",
+    "date": "2025-05-22",
+    "session": "12 PM - 3 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L6",
+    "subject": "Cloud",
+    "date": "2025-05-23",
+    "session": "12 PM - 3 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L7",
+    "subject": "Web Dev",
+    "date": "2025-05-23",
+    "session": "3 PM - 6 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  },
+  {
+    "id": "L8",
+    "subject": "Cyber Security",
+    "date": "2025-05-24",
+    "session": "12 PM - 3 PM",
+    "status": "Unassigned",
+    "assignedTo": null
+  }
+]
