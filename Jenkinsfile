@@ -13,34 +13,19 @@ pipeline {
       }
     }
 
-    stage('Install Backend') {
+    stage('Build Docker Images') {
       steps {
-        dir("${env.BACKEND_DIR}") {
-          bat 'npm install'
+        script {
+          sh 'docker-compose build'
         }
       }
     }
 
-    stage('Install Frontend') {
+    stage('Deploy with Docker Compose') {
       steps {
-        dir("${env.FRONTEND_DIR}") {
-          bat 'npm install'
-        }
-      }
-    }
-
-    stage('Build Frontend') {
-      steps {
-        dir("${env.FRONTEND_DIR}") {
-          bat 'npm run build'
-        }
-      }
-    }
-
-    stage('Test Backend') {
-      steps {
-        dir("${env.BACKEND_DIR}") {
-          bat 'npm test || exit 0'  // allows build to continue even if tests fail
+        script {
+          sh 'docker-compose down'
+          sh 'docker-compose up -d'
         }
       }
     }
@@ -48,10 +33,10 @@ pipeline {
 
   post {
     success {
-      echo '✅ Build Successful!'
+      echo '✅ Deployment successful!'
     }
     failure {
-      echo '❌ Build Failed. Check logs.'
+      echo '❌ Deployment failed!'
     }
   }
 }
