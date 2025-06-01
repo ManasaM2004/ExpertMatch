@@ -2,6 +2,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import { MongoClient } from 'mongodb';
+import feedbackRoutes from './routes/feedRoutes.js'; // 👈 must use .js in import
 
 dotenv.config();
 
@@ -22,41 +23,25 @@ async function connectDB() {
     const db = client.db('expertmatch');
     feedbackCollection = db.collection('feedbacks');
     console.log('✅ MongoDB connected');
+
+    // Inject the collection into the request object
+    app.use((req, res, next) => {
+      req.feedbackCollection = feedbackCollection;
+      next();
+    });
+
+    // Mount the routes *after* Mongo is connected
+    app.use('/api/feedback', feedbackRoutes);
+
+    // Start server
+    app.listen(PORT, () =>
+      console.log(`🚀Server running at : http://localhost:${PORT}`)
+    );
+
   } catch (err) {
     console.error('❌ DB connection error:', err);
-    process.exit(1); // Exit if DB fails to connect
+    process.exit(1);
   }
 }
 
 connectDB();
-
-// Routes
-
-// Submit feedback
-app.post('/api/feedback', async (req, res) => {
-  try {
-    const data = req.body;
-    data.submittedAt = new Date().toISOString();
-    await feedbackCollection.insertOne(data);
-    res.status(201).json({ message: '✅ Feedback stored successfully!' });
-  } catch (e) {
-    console.error('❌ Error saving feedback:', e);
-    res.status(500).json({ error: 'Server error' });
-  }
-});
-
-// Get all feedback
-app.get('/api/feedback', async (req, res) => {
-  try {
-    const feedbacks = await feedbackCollection.find({}).toArray();
-    res.json(feedbacks);
-  } catch (e) {
-    console.error('❌ Error fetching feedback:', e);
-    res.status(500).json({ error: 'Failed to fetch feedback' });
-  }
-});
-
-// Start server
-app.listen(PORT, () =>
-  console.log(`🚀 Server running at: http://localhost:${PORT}`)
-);
