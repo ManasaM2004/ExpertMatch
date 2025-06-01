@@ -1,42 +1,62 @@
 pipeline {
-  agent any
+    agent any
 
-  environment {
-    FRONTEND_DIR = 'frontend'
-    BACKEND_DIR = 'backend'
-  }
-
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
+    environment {
+        FRONTEND_DIR = 'frontend'
+        BACKEND_DIR = 'backend'
     }
 
-    stage('Build Docker Images') {
-      steps {
-        script {
-          sh 'docker-compose build'
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
         }
-      }
-    }
 
-    stage('Deploy with Docker Compose') {
-      steps {
-        script {
-          sh 'docker-compose down'
-          sh 'docker-compose up -d'
+        stage('Install Backend') {
+            steps {
+                dir("${env.BACKEND_DIR}") {
+                    bat 'npm install'
+                }
+            }
         }
-      }
-    }
-  }
 
-  post {
-    success {
-      echo '✅ Deployment successful!'
+        stage('Install Frontend') {
+            steps {
+                dir("${env.FRONTEND_DIR}") {
+                    bat 'npm install'
+                }
+            }
+        }
+
+        stage('Build Frontend') {
+            steps {
+                dir("${env.FRONTEND_DIR}") {
+                    bat 'npm run build'
+                }
+            }
+        }
+
+        stage('Build Docker Images') {
+            steps {
+                bat 'docker-compose build'
+            }
+        }
+
+        stage('Deploy with Docker Compose') {
+            steps {
+                bat 'docker-compose down'
+                bat 'docker-compose up -d'
+            }
+        }
     }
-    failure {
-      echo '❌ Deployment failed!'
+
+    post {
+        success {
+            echo '✅ Deployment successful!'
+        }
+        failure {
+            echo '❌ Deployment failed. Check logs.'
+        }
     }
-  }
 }
