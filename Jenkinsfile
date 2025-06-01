@@ -2,14 +2,14 @@ pipeline {
   agent any
 
   environment {
-    BACKEND_DIR = 'backend'
-    FRONTEND_DIR = 'frontend'
+    BACKEND_DIR = "backend"
+    FRONTEND_DIR = "frontend"
   }
 
   stages {
-    stage('Clone Repository') {
+    stage('Checkout') {
       steps {
-        git 'https://github.com/ManasaM2004/ExpertMatch.git'
+        checkout scm
       }
     }
 
@@ -37,10 +37,10 @@ pipeline {
       }
     }
 
-    stage('Run Backend Tests') {
+    stage('Test Backend') {
       steps {
         dir("${env.BACKEND_DIR}") {
-          sh 'npm test || echo "Tests failed or skipped"' // optional test step
+          sh 'npm test || echo "⚠️ No tests or test failure ignored"'
         }
       }
     }
@@ -48,10 +48,10 @@ pipeline {
 
   post {
     success {
-      echo '✅ CI Pipeline Successful!'
+      echo '✅ CI Pipeline completed successfully!'
     }
     failure {
-      echo '❌ CI Failed! Please check logs.'
+      echo '❌ CI Pipeline failed. Please check logs.'
     }
   }
 }
