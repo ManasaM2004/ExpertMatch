@@ -2,8 +2,8 @@ pipeline {
   agent any
 
   environment {
-    BACKEND_DIR = "backend"
-    FRONTEND_DIR = "frontend"
+    FRONTEND_DIR = 'frontend'
+    BACKEND_DIR = 'backend'
   }
 
   stages {
@@ -16,7 +16,7 @@ pipeline {
     stage('Install Backend') {
       steps {
         dir("${env.BACKEND_DIR}") {
-          sh 'npm install'
+          bat 'npm install'
         }
       }
     }
@@ -24,7 +24,7 @@ pipeline {
     stage('Install Frontend') {
       steps {
         dir("${env.FRONTEND_DIR}") {
-          sh 'npm install'
+          bat 'npm install'
         }
       }
     }
@@ -32,7 +32,7 @@ pipeline {
     stage('Build Frontend') {
       steps {
         dir("${env.FRONTEND_DIR}") {
-          sh 'npm run build'
+          bat 'npm run build'
         }
       }
     }
@@ -40,7 +40,7 @@ pipeline {
     stage('Test Backend') {
       steps {
         dir("${env.BACKEND_DIR}") {
-          sh 'npm test || echo "⚠️ No tests or test failure ignored"'
+          bat 'npm test || exit 0'  // allows build to continue even if tests fail
         }
       }
     }
@@ -48,10 +48,10 @@ pipeline {
 
   post {
     success {
-      echo '✅ CI Pipeline completed successfully!'
+      echo '✅ Build Successful!'
     }
     failure {
-      echo '❌ CI Pipeline failed. Please check logs.'
+      echo '❌ Build Failed. Check logs.'
     }
   }
 }
