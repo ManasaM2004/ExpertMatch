@@ -1,0 +1,272 @@
+[
+  {
+    "id": "I1",
+    "name": "Dr. Lakshmi Rao",
+    "college": "MS Ramaiah Institute",
+    "email": "lakshmi@ramaiah.edu",
+    "phone": "9000011111",
+    "specialization": ["AI"],
+    "availability": [
+      { "date": "2025-05-21", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-21", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-21", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/21.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I2",
+    "name": "Dr. Naveen Reddy",
+    "college": "MS Ramaiah Institute",
+    "email": "naveen@ramaiah.edu",
+    "phone": "9000011112",
+    "specialization": ["OS"],
+    "availability": [
+      { "date": "2025-05-22", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-22", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-22", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/23.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I3",
+    "name": "Dr. Sneha Iyer",
+    "college": "MS Ramaiah Institute",
+    "email": "sneha@ramaiah.edu",
+    "phone": "9000011113",
+    "specialization": ["DBMS"],
+    "availability": [
+      { "date": "2025-05-23", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-23", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-23", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/24.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I4",
+    "name": "Dr. Rajeev Pillai",
+    "college": "MS Ramaiah Institute",
+    "email": "rajeev@ramaiah.edu",
+    "phone": "9000011114",
+    "specialization": ["DSA"],
+    "availability": [
+      { "date": "2025-05-24", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-24", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-24", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/24.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I5",
+    "name": "Dr. Aishwarya Desai",
+    "college": "MS Ramaiah Institute",
+    "email": "aishwarya@ramaiah.edu",
+    "phone": "9000011115",
+    "specialization": ["CN"],
+    "availability": [
+      { "date": "2025-05-25", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-25", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-25", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/25.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I6",
+    "name": "Dr. Karthik Bhat",
+    "college": "MS Ramaiah Institute",
+    "email": "karthik@ramaiah.edu",
+    "phone": "9000011116",
+    "specialization": ["Python"],
+    "availability": [
+      { "date": "2025-05-26", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-26", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-26", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/25.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I7",
+    "name": "Dr. Meena Nair",
+    "college": "MS Ramaiah Institute",
+    "email": "meena@ramaiah.edu",
+    "phone": "9000011117",
+    "specialization": ["AI"],
+    "availability": [
+      { "date": "2025-05-21", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-21", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-21", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/26.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I8",
+    "name": "Dr. Rohit Kumar",
+    "college": "MS Ramaiah Institute",
+    "email": "rohit@ramaiah.edu",
+    "phone": "9000011118",
+    "specialization": ["OS"],
+    "availability": [
+      { "date": "2025-05-22", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-22", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-22", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/26.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I9",
+    "name": "Dr. Kavita Rao",
+    "college": "MS Ramaiah Institute",
+    "email": "kavita@ramaiah.edu",
+    "phone": "9000011119",
+    "specialization": ["DBMS"],
+    "availability": [
+      { "date": "2025-05-23", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-23", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-23", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/27.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I10",
+    "name": "Dr. Arjun Shetty",
+    "college": "MS Ramaiah Institute",
+    "email": "arjun@ramaiah.edu",
+    "phone": "9000011120",
+    "specialization": ["DSA"],
+    "availability": [
+      { "date": "2025-05-24", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-24", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-24", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/27.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I11",
+    "name": "Dr. Preeti Nandan",
+    "college": "MS Ramaiah Institute",
+    "email": "preeti@ramaiah.edu",
+    "phone": "9000011121",
+    "specialization": ["CN"],
+    "availability": [
+      { "date": "2025-05-25", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-25", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-25", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/28.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I12",
+    "name": "Dr. Aditya Menon",
+    "college": "MS Ramaiah Institute",
+    "email": "aditya@ramaiah.edu",
+    "phone": "9000011122",
+    "specialization": ["Python"],
+    "availability": [
+      { "date": "2025-05-26", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-26", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-26", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/28.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I13",
+    "name": "Dr. Nisha Patil",
+    "college": "MS Ramaiah Institute",
+    "email": "nisha@ramaiah.edu",
+    "phone": "9000011123",
+    "specialization": ["AI"],
+    "availability": [
+      { "date": "2025-05-21", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-21", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-21", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/29.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I14",
+    "name": "Dr. Rakesh Narayan",
+    "college": "MS Ramaiah Institute",
+    "email": "rakesh@ramaiah.edu",
+    "phone": "9000011124",
+    "specialization": ["OS"],
+    "availability": [
+      { "date": "2025-05-22", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-22", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-22", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/29.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I15",
+    "name": "Dr. Vidya Pai",
+    "college": "MS Ramaiah Institute",
+    "email": "vidya@ramaiah.edu",
+    "phone": "9000011125",
+    "specialization": ["DBMS"],
+    "availability": [
+      { "date": "2025-05-23", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-23", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-23", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/30.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I16",
+    "name": "Dr. Pranav Kulkarni",
+    "college": "MS Ramaiah Institute",
+    "email": "pranav@ramaiah.edu",
+    "phone": "9000011126",
+    "specialization": ["DSA"],
+    "availability": [
+      { "date": "2025-05-24", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-24", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-24", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/30.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "I17",
+    "name": "Dr. Soumya Ghosh",
+    "college": "MS Ramaiah Institute",
+    "email": "soumya@ramaiah.edu",
+    "phone": "9000011127",
+    "specialization": ["CN"],
+    "availability": [
+      { "date": "2025-05-25", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-25", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-25", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/31.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "I18",
+    "name": "Dr. Tanmay Bhatt",
+    "college": "MS Ramaiah Institute",
+    "email": "tanmay@ramaiah.edu",
+    "phone": "9000011128",
+    "specialization": ["Python"],
+    "availability": [
+      { "date": "2025-05-26", "session": "9 AM - 12 PM" },
+      { "date": "2025-05-26", "session": "12 PM - 3 PM" },
+      { "date": "2025-05-26", "session": "3 PM - 6 PM" }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/31.jpg",
+    "gender": "male"
+  }
+]

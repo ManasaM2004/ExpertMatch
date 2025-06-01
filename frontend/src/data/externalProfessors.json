@@ -1,0 +1,542 @@
+[
+  {
+    "id": "P1",
+    "name": "Dr. Rajesh Nair",
+    "college": "PES University",
+    "email": "aiexpert1@college.edu",
+    "phone": "9876543001",
+    "specialization": [
+      "AI"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-21",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/1.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P2",
+    "name": "Dr. Ananya Rao",
+    "college": "RV College of Engineering",
+    "email": "aiexpert2@college.edu",
+    "phone": "9876543002",
+    "specialization": [
+      "AI"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-21",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/1.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P3",
+    "name": "Dr. Vivek Reddy",
+    "college": "MS Ramaiah Institute",
+    "email": "aiexpert3@college.edu",
+    "phone": "9876543003",
+    "specialization": [
+      "AI"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-21",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/2.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P4",
+    "name": "Dr. Sneha Menon",
+    "college": "BIT Bangalore",
+    "email": "aiexpert4@college.edu",
+    "phone": "9876543004",
+    "specialization": [
+      "AI"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-22",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/2.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P5",
+    "name": "Dr. Ajay Shenoy",
+    "college": "Dayananda Sagar College",
+    "email": "aiexpert5@college.edu",
+    "phone": "9876543005",
+    "specialization": [
+      "AI"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-22",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/3.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P6",
+    "name": "Dr. Kavitha Iyer",
+    "college": "Jain University",
+    "email": "mlexpert1@college.edu",
+    "phone": "9876543006",
+    "specialization": [
+      "Python"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-26",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/3.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P7",
+    "name": "Dr. Manjunath Gowda",
+    "college": "Acharya Institute",
+    "email": "mlexpert2@college.edu",
+    "phone": "9876543007",
+    "specialization": [
+      "Python"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-26",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/4.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P8",
+    "name": "Dr. Priya Desai",
+    "college": "REVA University",
+    "email": "mlexpert3@college.edu",
+    "phone": "9876543008",
+    "specialization": [
+      "Python"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-26",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/4.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P9",
+    "name": "Dr. Arvind Krishna",
+    "college": "East Point College",
+    "email": "mlexpert4@college.edu",
+    "phone": "9876543009",
+    "specialization": [
+      "Python"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-27",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/5.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P10",
+    "name": "Dr. Shruti Patil",
+    "college": "BMS College of Engineering",
+    "email": "mlexpert5@college.edu",
+    "phone": "9876543010",
+    "specialization": [
+      "Python"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-27",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/5.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P11",
+    "name": "Dr. Rakesh Shetty",
+    "college": "PES University",
+    "email": "osexpert1@college.edu",
+    "phone": "9876543011",
+    "specialization": [
+      "OS"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-22",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/6.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P12",
+    "name": "Dr. Nandita Rao",
+    "college": "RV College of Engineering",
+    "email": "osexpert2@college.edu",
+    "phone": "9876543012",
+    "specialization": [
+      "OS"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-22",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/6.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P13",
+    "name": "Dr. Sanjay Pillai",
+    "college": "MS Ramaiah Institute",
+    "email": "osexpert3@college.edu",
+    "phone": "9876543013",
+    "specialization": [
+      "OS"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-22",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/7.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P14",
+    "name": "Dr. Deepa Narayan",
+    "college": "BIT Bangalore",
+    "email": "osexpert4@college.edu",
+    "phone": "9876543014",
+    "specialization": [
+      "OS"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-23",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/7.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P15",
+    "name": "Dr. Kiran Kumar",
+    "college": "Dayananda Sagar College",
+    "email": "osexpert5@college.edu",
+    "phone": "9876543015",
+    "specialization": [
+      "OS"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-23",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/8.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P16",
+    "name": "Dr. Neha Verma",
+    "college": "Jain University",
+    "email": "dsaexpert1@college.edu",
+    "phone": "9876543016",
+    "specialization": [
+      "DSA"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-24",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/8.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P17",
+    "name": "Dr. Mahesh Iyer",
+    "college": "Acharya Institute",
+    "email": "dsaexpert2@college.edu",
+    "phone": "9876543017",
+    "specialization": [
+      "DSA"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-24",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/9.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P18",
+    "name": "Dr. Harini Mukherjee",
+    "college": "REVA University",
+    "email": "dsaexpert3@college.edu",
+    "phone": "9876543018",
+    "specialization": [
+      "DSA"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-24",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/9.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P19",
+    "name": "Dr. Ashwin Dsouza",
+    "college": "East Point College",
+    "email": "dsaexpert4@college.edu",
+    "phone": "9876543019",
+    "specialization": [
+      "DSA"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-25",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/10.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P20",
+    "name": "Dr. Aishwarya Hegde",
+    "college": "BMS College of Engineering",
+    "email": "dsaexpert5@college.edu",
+    "phone": "9876543020",
+    "specialization": [
+      "DSA"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-25",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/10.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P21",
+    "name": "Dr. Sameer Saxena",
+    "college": "PES University",
+    "email": "dbmsexpert1@college.edu",
+    "phone": "9876543021",
+    "specialization": [
+      "DBMS"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-23",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/11.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P22",
+    "name": "Dr. Latha Shankar",
+    "college": "RV College of Engineering",
+    "email": "dbmsexpert2@college.edu",
+    "phone": "9876543022",
+    "specialization": [
+      "DBMS"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-23",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/11.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P23",
+    "name": "Dr. Arjun Patil",
+    "college": "MS Ramaiah Institute",
+    "email": "dbmsexpert3@college.edu",
+    "phone": "9876543023",
+    "specialization": [
+      "DBMS"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-23",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/12.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P24",
+    "name": "Dr. Meghana Joshi",
+    "college": "BIT Bangalore",
+    "email": "dbmsexpert4@college.edu",
+    "phone": "9876543024",
+    "specialization": [
+      "DBMS"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-24",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/12.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P25",
+    "name": "Dr. Nikhil Jain",
+    "college": "Dayananda Sagar College",
+    "email": "dbmsexpert5@college.edu",
+    "phone": "9876543025",
+    "specialization": [
+      "DBMS"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-21",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/13.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P26",
+    "name": "Dr. Meenakshi Rao",
+    "college": "Jain University",
+    "email": "cnexpert1@college.edu",
+    "phone": "9876543026",
+    "specialization": [
+      "CN"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-25",
+        "session": "9 AM - 12 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/13.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P27",
+    "name": "Dr. Rohit Menon",
+    "college": "Acharya Institute",
+    "email": "cnexpert2@college.edu",
+    "phone": "9876543027",
+    "specialization": [
+      "CN"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-25",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/14.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P28",
+    "name": "Dr. Divya Sharma",
+    "college": "REVA University",
+    "email": "cnexpert3@college.edu",
+    "phone": "9876543028",
+    "specialization": [
+      "CN"
+    ],
+    "availability": [
+      {
+        "date": "2025-05-25",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/14.jpg",
+    "gender": "female"
+  },
+  {
+    "id": "P29",
+    "name": "Dr. Vinay Kulkarni",
+    "college": "East Point College",
+    "email": "cnexpert4@college.edu",
+    "phone": "9876543029",
+    "specialization": [
+      "CN"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-26",
+        "session": "3 PM - 6 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/men/15.jpg",
+    "gender": "male"
+  },
+  {
+    "id": "P30",
+    "name": "Dr. Ritu Vyas",
+    "college": "BMS College of Engineering",
+    "email": "cnexpert5@college.edu",
+    "phone": "9876543030",
+    "specialization": [
+      "CN"
+    ],
+    "availability": [
+       {
+        "date": "2025-05-26",
+        "session": "12 PM - 3 PM"
+      }
+    ],
+    "image": "https://randomuser.me/api/portraits/women/15.jpg",
+    "gender": "female"
+  }
+]

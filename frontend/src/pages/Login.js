@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import externalProfessors from '../data/externalProfessors.json';
+import internalProfessors from '../data/internalProfessors.json';
 import labs from '../data/labs.json';
-import professors from '../data/professors.json';
 
 const Login = () => {
   const [loggedIn, setLoggedIn] = useState(
@@ -9,7 +9,6 @@ const Login = () => {
   );
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -28,7 +27,6 @@ const Login = () => {
     setPassword('');
   };
 
-  // ✅ If logged in → show labs + professors overview
   if (loggedIn) {
     return (
       <div className="container mt-5">
@@ -54,7 +52,7 @@ const Login = () => {
             </thead>
             <tbody>
               {labs.map((lab, index) => (
-                <tr key={lab.id}>
+                <tr key={lab.id ||`${lab.subject}-${lab.date}-${lab.session}`}>
                   <td>{index + 1}</td>
                   <td>{lab.subject}</td>
                   <td>{lab.date}</td>
@@ -72,10 +70,10 @@ const Login = () => {
           </table>
         </div>
 
-        {/* 🔹 Professors Section */}
-        <h4 className="text-primary">👩‍🏫 Professor Profiles</h4>
+        {/* 🔹 External Professors */}
+        <h4 className="text-primary">👩‍🏫 External Professor Profiles</h4>
         <div className="row">
-          {professors.map((prof) => (
+          {externalProfessors.map((prof) => (
             <div key={prof.id} className="col-md-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body text-center">
@@ -86,15 +84,45 @@ const Login = () => {
                     style={{ width: '80px', height: '80px', objectFit: 'cover' }}
                   />
                   <h5>{prof.name}</h5>
-                  <p className="mb-1"><strong>College:</strong> {prof.college}</p>
-                  <p className="mb-1"><strong>Email:</strong> {prof.email}</p>
-                  <p className="mb-1"><strong>Phone:</strong> {prof.phone}</p>
-                  <p className="mb-1">
-                    <strong>Specialization:</strong> {prof.specialization.join(', ')}
-                  </p>
-                  <p className="mb-1">
+                  <p><strong>College:</strong> {prof.college}</p>
+                  <p><strong>Email:</strong> {prof.email}</p>
+                  <p><strong>Phone:</strong> {prof.phone}</p>
+                  <p><strong>Specialization:</strong> {prof.specialization.join(', ')}</p>
+                  <p>
                     <strong>Available:</strong>{' '}
-                    {prof.availability.map(a => `${a.date} (${a.session})`).join(', ')}
+                    {Array.isArray(prof.availability)
+                      ? prof.availability.map(a =>`${a.date} (${a.session})`).join(',')
+                      : 'Not Available'}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 🔹 Internal Professors */}
+        <h4 className="text-primary mt-5">🏫 Internal Professor Profiles</h4>
+        <div className="row">
+          {internalProfessors.map((prof) => (
+            <div key={prof.id} className="col-md-4 mb-4">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body text-center">
+                  <img
+                    src={prof.image}
+                    alt={prof.name}
+                    className="rounded-circle mb-3"
+                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
+                  />
+                  <h5>{prof.name}</h5>
+                  <p><strong>College:</strong> {prof.college}</p>
+                  <p><strong>Email:</strong> {prof.email}</p>
+                  <p><strong>Phone:</strong> {prof.phone}</p>
+                  <p><strong>Specialization:</strong> {prof.specialization.join(', ')}</p>
+                  <p>
+                    <strong>Available:</strong>{' '}
+                    {Array.isArray(prof.availability)
+                      ? prof.availability.map(a => `${a.date} (${a.session})`).join(',')
+                      : 'Not Available'}
                   </p>
                 </div>
               </div>
@@ -105,7 +133,7 @@ const Login = () => {
     );
   }
 
-  // 👇 Show login form if not logged in
+  // 👇 Login Form
   return (
     <div className="container mt-5" style={{ maxWidth: '400px' }}>
       <h3 className="text-center mb-4">🔐 Admin Login</h3>

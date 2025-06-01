@@ -1,66 +1,128 @@
 [
   {
-    "id": "L1",
     "subject": "AI",
     "date": "2025-05-21",
     "session": "9 AM - 12 PM",
-    "status": "Unassigned",
-    "assignedTo": null
+    "status": "Assigned",
+    "professor": "Dr. Rajesh Nair"
   },
   {
-    "id": "L2",
-    "subject": "DSA",
-    "date": "2025-05-21",
-    "session": "3 PM - 6 PM",
-    "status": "Unassigned",
-    "assignedTo": null
-  },
-  {
-    "id": "L3",
-    "subject": "ML",
+    "subject": "AI",
     "date": "2025-05-21",
     "session": "12 PM - 3 PM",
-    "status": "Unassigned",
-    "assignedTo": null
+    "status": "Assigned",
+    "professor": "Dr. Ananya Rao"
   },
   {
-    "id": "L4",
+    "subject": "AI",
+    "date": "2025-05-21",
+    "session": "3 PM - 6 PM",
+    "status": "Assigned",
+    "professor": "Dr. Vivek Reddy"
+  },
+  {
     "subject": "OS",
     "date": "2025-05-22",
     "session": "9 AM - 12 PM",
     "status": "Unassigned",
-    "assignedTo": null
+    "professor": "-"
   },
   {
-    "id": "L5",
-    "subject": "Networks",
+    "subject": "OS",
     "date": "2025-05-22",
     "session": "12 PM - 3 PM",
     "status": "Unassigned",
-    "assignedTo": null
+    "professor": "-"
   },
   {
-    "id": "L6",
-    "subject": "Cloud",
+    "subject": "OS",
+    "date": "2025-05-22",
+    "session": "3 PM - 6 PM",
+    "status": "Unassigned",
+    "professor": "-"
+  },
+  {
+    "subject": "DBMS",
+    "date": "2025-05-23",
+    "session": "9 AM - 12 PM",
+    "status": "Unassigned",
+    "professor": "-"
+  },
+  {
+    "subject": "DBMS",
     "date": "2025-05-23",
     "session": "12 PM - 3 PM",
     "status": "Unassigned",
-    "assignedTo": null
+    "professor": "-"
   },
   {
-    "id": "L7",
-    "subject": "Web Dev",
+    "subject": "DBMS",
     "date": "2025-05-23",
     "session": "3 PM - 6 PM",
     "status": "Unassigned",
-    "assignedTo": null
+    "professor": "-"
   },
   {
-    "id": "L8",
-    "subject": "Cyber Security",
+    "subject": "DSA",
+    "date": "2025-05-24",
+    "session": "9 AM - 12 PM",
+    "status": "Assigned",
+    "professor": "Dr. Neha Verma"
+  },
+  {
+    "subject": "DSA",
     "date": "2025-05-24",
     "session": "12 PM - 3 PM",
+    "status": "Assigned",
+    "professor": "Dr. Mahesh Iyer"
+  },
+  {
+    "subject": "DSA",
+    "date": "2025-05-24",
+    "session": "3 PM - 6 PM",
+    "status": "Assigned",
+    "professor": "Dr. Harini Mukherjee"
+  },
+  {
+    "subject": "CN",
+    "date": "2025-05-25",
+    "session": "9 AM - 12 PM",
     "status": "Unassigned",
-    "assignedTo": null
+    "professor": "-"
+  },
+  {
+    "subject": "CN",
+    "date": "2025-05-25",
+    "session": "12 PM - 3 PM",
+    "status": "Unassigned",
+    "professor": "-"
+  },
+  {
+    "subject": "CN",
+    "date": "2025-05-25",
+    "session": "3 PM - 6 PM",
+    "status": "Unassigned",
+    "professor": "-"
+  },
+  {
+    "subject": "Python",
+    "date": "2025-05-26",
+    "session": "9 AM - 12 PM",
+    "status": "Unassigned",
+    "professor": "-"
+  },
+  {
+    "subject": "Python",
+    "date": "2025-05-26",
+    "session": "12 PM - 3 PM",
+    "status": "Unassigned",
+    "professor": "-"
+  },
+  {
+    "subject": "Python",
+    "date": "2025-05-26",
+    "session": "3 PM - 6 PM",
+    "status": "Unassigned",
+    "professor": "-"
   }
 ]

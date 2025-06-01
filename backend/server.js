@@ -1,18 +1,18 @@
-// backend/server.js
 import cors from 'cors';
 import dotenv from 'dotenv';
 import express from 'express';
 import { MongoClient } from 'mongodb';
+
 dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
-// Middlewares
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection
+// MongoDB connection setup
 const client = new MongoClient(process.env.MONGO_URI);
 let feedbackCollection;
 
@@ -24,12 +24,15 @@ async function connectDB() {
     console.log('✅ MongoDB connected');
   } catch (err) {
     console.error('❌ DB connection error:', err);
+    process.exit(1); // Exit if DB fails to connect
   }
 }
 
 connectDB();
 
 // Routes
+
+// Submit feedback
 app.post('/api/feedback', async (req, res) => {
   try {
     const data = req.body;
@@ -42,13 +45,18 @@ app.post('/api/feedback', async (req, res) => {
   }
 });
 
+// Get all feedback
 app.get('/api/feedback', async (req, res) => {
   try {
     const feedbacks = await feedbackCollection.find({}).toArray();
     res.json(feedbacks);
   } catch (e) {
+    console.error('❌ Error fetching feedback:', e);
     res.status(500).json({ error: 'Failed to fetch feedback' });
   }
 });
 
-app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
+// Start server
+app.listen(PORT, () =>
+  console.log(`🚀 Server running at: http://localhost:${PORT}`)
+);

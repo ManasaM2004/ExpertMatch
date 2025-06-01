@@ -6,6 +6,7 @@ import Contact from './pages/Contact';
 import Dashboard from './pages/Dashboard';
 import Feedback from './pages/Feedback';
 import Home from './pages/Home';
+import LabDashboard from './pages/LabDashboard';
 import Login from './pages/Login';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/feedback" element={<Feedback />} />
-
+        <Route path="/dashboard" element={<LabDashboard />} />
+        
         {/* 🔒 Protected Dashboard (after login only) */}
         <Route
           path="/dashboard"

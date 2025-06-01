@@ -1,5 +1,4 @@
-
-name: Node.js CI
+name: Full Stack CI
 
 on:
   push:
@@ -12,17 +11,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: ⬇️ Checkout code
+    - name: 🔄 Checkout repository
       uses: actions/checkout@v3
 
-    - name: 🟢 Setup Node.js
+    - name: 🛠️ Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 18
 
-    - name: 📦 Install dependencies
+    # Backend CI
+    - name: 📦 Install Backend Dependencies
       run: npm install
       working-directory: ./backend
 
-    - name: ✅ Run Lint or Test
-      run: echo "✅ CI Passed!"
+    - name: ✅ Backend Lint/Test
+      run: echo "✅ Backend OK" # Replace with: npm test or npm run lint
+      working-directory: ./backend
+
+    # Frontend CI
+    - name: 📦 Install Frontend Dependencies
+      run: npm install
+      working-directory: ./frontend
+
+    - name: 🧪 Build Frontend
+      run: npm run build
+      working-directory: ./frontend
+
+    - name: ✅ CI Pipeline Success
+      run: echo "🎉 CI Passed for both Frontend and Backend!"
