@@ -21,19 +21,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/feedback" element={<Feedback />} />
-        <Route path="/dashboard" element={<LabDashboard />} />
-        
-        {/* 🔒 Protected Dashboard (after login only) */}
-        <Route
-          path="/dashboard"
-          element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />}
-        />
 
-        {/* 🔒 Optional: Admin Dashboard */}
-        <Route
-          path="/admin"
-          element={isLoggedIn ? <AdminDashboard /> : <Navigate to="/login" />}
-        />
+        {/* Protected Dashboard Routes */}
+        <Route path="/dashboard" element={isLoggedIn ? <Dashboard /> : <Navigate to="/login" />} />
+        <Route path="/lab-dashboard" element={<LabDashboard />} />
+        <Route path="/admin" element={isLoggedIn ? <AdminDashboard /> : <Navigate to="/login" />} />
       </Routes>
     </Router>
   );
