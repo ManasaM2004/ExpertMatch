@@ -27,6 +27,9 @@ const Login = () => {
     setPassword('');
   };
 
+  // Combine internal and external professors into one array
+  const professors = [...internalProfessors, ...externalProfessors];
+
   if (loggedIn) {
     return (
       <div className="container mt-5">
@@ -52,7 +55,7 @@ const Login = () => {
             </thead>
             <tbody>
               {labs.map((lab, index) => (
-                <tr key={lab.id ||`${lab.subject}-${lab.date}-${lab.session}`}>
+                <tr key={lab.id}>
                   <td>{index + 1}</td>
                   <td>{lab.subject}</td>
                   <td>{lab.date}</td>
@@ -70,10 +73,10 @@ const Login = () => {
           </table>
         </div>
 
-        {/* 🔹 External Professors */}
-        <h4 className="text-primary">👩‍🏫 External Professor Profiles</h4>
+        {/* 🔹 Professors Section */}
+        <h4 className="text-primary">👩‍🏫 Professor Profiles</h4>
         <div className="row">
-          {externalProfessors.map((prof) => (
+          {professors.map((prof) => (
             <div key={prof.id} className="col-md-4 mb-4">
               <div className="card h-100 shadow-sm">
                 <div className="card-body text-center">
@@ -84,45 +87,23 @@ const Login = () => {
                     style={{ width: '80px', height: '80px', objectFit: 'cover' }}
                   />
                   <h5>{prof.name}</h5>
-                  <p><strong>College:</strong> {prof.college}</p>
-                  <p><strong>Email:</strong> {prof.email}</p>
-                  <p><strong>Phone:</strong> {prof.phone}</p>
-                  <p><strong>Specialization:</strong> {prof.specialization.join(', ')}</p>
-                  <p>
-                    <strong>Available:</strong>{' '}
-                    {Array.isArray(prof.availability)
-                      ? prof.availability.map(a =>`${a.date} (${a.session})`).join(',')
-                      : 'Not Available'}
+                  <p className="mb-1">
+                    <strong>College:</strong> {prof.college}
                   </p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* 🔹 Internal Professors */}
-        <h4 className="text-primary mt-5">🏫 Internal Professor Profiles</h4>
-        <div className="row">
-          {internalProfessors.map((prof) => (
-            <div key={prof.id} className="col-md-4 mb-4">
-              <div className="card h-100 shadow-sm">
-                <div className="card-body text-center">
-                  <img
-                    src={prof.image}
-                    alt={prof.name}
-                    className="rounded-circle mb-3"
-                    style={{ width: '80px', height: '80px', objectFit: 'cover' }}
-                  />
-                  <h5>{prof.name}</h5>
-                  <p><strong>College:</strong> {prof.college}</p>
-                  <p><strong>Email:</strong> {prof.email}</p>
-                  <p><strong>Phone:</strong> {prof.phone}</p>
-                  <p><strong>Specialization:</strong> {prof.specialization.join(', ')}</p>
-                  <p>
+                  <p className="mb-1">
+                    <strong>Email:</strong> {prof.email}
+                  </p>
+                  <p className="mb-1">
+                    <strong>Phone:</strong> {prof.phone}
+                  </p>
+                  <p className="mb-1">
+                    <strong>Specialization:</strong> {prof.specialization.join(', ')}
+                  </p>
+                  <p className="mb-1">
                     <strong>Available:</strong>{' '}
-                    {Array.isArray(prof.availability)
-                      ? prof.availability.map(a => `${a.date} (${a.session})`).join(',')
-                      : 'Not Available'}
+                    {prof.availability
+                      .map((a) => `${a.date} (${a.session})`)
+                      .join(', ')}
                   </p>
                 </div>
               </div>
@@ -133,31 +114,63 @@ const Login = () => {
     );
   }
 
-  // 👇 Login Form
+  // 👇 Login form with background image and overlay
   return (
-    <div className="container mt-5" style={{ maxWidth: '400px' }}>
-      <h3 className="text-center mb-4">🔐 Admin Login</h3>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          className="form-control mb-2"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="form-control mb-3"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <button type="submit" className="btn btn-dark w-100">Login</button>
-      </form>
+    <div
+      style={{
+        backgroundImage: "url('/background.jpg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        minHeight: '100vh',
+        position: 'relative',
+      }}
+    >
+      {/* Overlay */}
+      <div
+        style={{
+          backgroundColor: 'rgba(0, 0, 0, 0.2)',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          flexDirection: 'column',
+          color: 'white',
+          padding: '20px',
+        }}
+      >
+        <div className="container" style={{ maxWidth: '400px' }}>
+          <h3 className="text-center mb-4">🔐 Admin Login</h3>
+          <form onSubmit={handleLogin}>
+            <input
+              type="text"
+              placeholder="Username"
+              className="form-control mb-2"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              className="form-control mb-3"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <button type="submit" className="btn btn-light w-100">
+              Login
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default Login;
+
