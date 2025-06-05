@@ -1,4 +1,4 @@
-name: SonarCloud Code Analysis
+name: SonarCloud Analysis
 
 on:
   push:
@@ -10,29 +10,30 @@ on:
 
 jobs:
   sonarcloud:
-    name: SonarCloud Analysis
+    name: SonarCloud Code Analysis
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: ⬇️ Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: 🔧 Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
 
-      - name: Install dependencies
+      - name: 📦 Install Dependencies
         run: |
           cd frontend
           npm install
           cd ../backend
           npm install
 
-      - name: Run SonarCloud analysis
+      - name: 🧪 Run SonarCloud Analysis
         uses: SonarSource/sonarcloud-github-action@v2
         with:
-          args: >
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          projectBaseDir: .
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}
+          SONAR_ORG: ${{ secrets.SONAR_ORG }}
