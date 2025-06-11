@@ -1,41 +1,41 @@
-name: Full Stack CI
+name: 🏗️ Build & Test
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build:
+  build-and-test:
+    name: 🔨 Build & Test
     runs-on: ubuntu-latest
 
     steps:
-    - name: 🔄 Checkout repository
-      uses: actions/checkout@v3
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v3
 
-    - name: 🛠️ Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: 🛠️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-    # Backend CI
-    - name: 📦 Install Backend Dependencies
-      run: npm install
-      working-directory: ./backend
+      # Backend
+      - name: 📦 Install backend dependencies
+        run: npm ci
+        working-directory: ./backend
 
-    - name: ✅ Backend Lint/Test
-      run: echo "✅ Backend OK" # Replace with: npm test or npm run lint
-      working-directory: ./backend
+      - name: 🔍 Lint & test backend
+        run: |
+          npm run lint
+          npm test
+        working-directory: ./backend
 
-    # Frontend CI
-    - name: 📦 Install Frontend Dependencies
-      run: npm install
-      working-directory: ./frontend
+      # Frontend
+      - name: 📦 Install frontend dependencies
+        run: npm ci
+        working-directory: ./frontend
 
-    - name: 🧪 Build Frontend
-      run: npm run build
-      working-directory: ./frontend
-
-    - name: ✅ CI Pipeline Success
-      run: echo "🎉 CI Passed for both Frontend and Backend!"
+      - name: 🏗️ Build frontend
+        run: npm run build
+        working-directory: ./frontend
