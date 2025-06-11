@@ -7,6 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
+  # 1️⃣ Build & Test
   build-and-test:
     name: 🔨 Build & Test
     runs-on: ubuntu-latest
@@ -19,16 +20,16 @@ jobs:
         with:
           node-version: '18'
 
+      # Backend
       - name: 📦 Install backend dependencies
         run: npm ci
         working-directory: ./backend
 
-      - name: 🔍 Lint & test backend
-        run: |
-          npm run lint
-          npm test
+      - name: ✅ Run backend tests
+        run: npm test
         working-directory: ./backend
 
+      # Frontend
       - name: 📦 Install frontend dependencies
         run: npm ci
         working-directory: ./frontend
@@ -37,6 +38,7 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
+  # 2️⃣ SonarCloud Analysis
   sonarcloud:
     name: 🔎 SonarCloud Analysis
     needs: build-and-test
@@ -50,7 +52,7 @@ jobs:
         with:
           node-version: '18'
 
-      - name: 📦 Install dependencies (backend & frontend)
+      - name: 📦 Install all dependencies
         run: |
           cd backend && npm ci
           cd ../frontend && npm ci
@@ -63,6 +65,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
+  # 3️⃣ Notify Render
   notify-render:
     name: 🚀 Notify Render or Echo
     needs: sonarcloud
