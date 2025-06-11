@@ -2,51 +2,69 @@ name: ExpertMatch CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: 
+      - main
 
 jobs:
   build-and-test:
+    name: Build and Test
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 18
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
 
-    - name: Install Backend dependencies
-      run: |
-        cd backend
-        npm install
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm install
 
-    - name: Install Frontend dependencies
-      run: |
-        cd frontend
-        npm install
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
 
   SonarCloud-Analysis:
-    needs: build-and-test
+    name: SonarCloud Analysis
     runs-on: ubuntu-latest
+    needs: build-and-test
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v3
 
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@master
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      with:
-        organization: ${{ secrets.SONAR_ORG }}
-        projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Backend Dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Install Frontend Dependencies
+        run: |
+          cd frontend
+          npm install
+
+      - name: Run SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          organization: ${{ secrets.SONAR_ORG }}
+          projectKey: ${{ secrets.SONAR_PROJECT_KEY }}
+          token: ${{ secrets.SONAR_TOKEN }}
 
   Notify:
-    needs: SonarCloud-Analysis
+    name: Notify Render or Echo
     runs-on: ubuntu-latest
+    needs: SonarCloud-Analysis
 
     steps:
-    - name: Echo deployment complete
-      run: echo "🎯 Build + SonarCloud + CI/CD success!"
+      - name: Notify or Print Success
+        run: echo "✅ Build, Test, and SonarCloud Analysis completed successfully."
