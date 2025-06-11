@@ -1,4 +1,4 @@
-name: 🔎 SonarCloud & Deploy
+name: ExpertMatch CI/CD Pipeline
 
 on:
   push:
@@ -7,10 +7,9 @@ on:
     branches: [ main ]
 
 jobs:
-  sonarcloud:
-    name: 🔍 SonarCloud Analysis
+  build-and-test:
+    name: 🔨 Build & Test
     runs-on: ubuntu-latest
-
     steps:
       - name: 🔄 Checkout repository
         uses: actions/checkout@v3
@@ -20,7 +19,38 @@ jobs:
         with:
           node-version: '18'
 
-      - name: 📦 Install dependencies (frontend & backend)
+      - name: 📦 Install backend dependencies
+        run: npm ci
+        working-directory: ./backend
+
+      - name: 🔍 Lint & test backend
+        run: |
+          npm run lint
+          npm test
+        working-directory: ./backend
+
+      - name: 📦 Install frontend dependencies
+        run: npm ci
+        working-directory: ./frontend
+
+      - name: 🏗️ Build frontend
+        run: npm run build
+        working-directory: ./frontend
+
+  sonarcloud:
+    name: 🔎 SonarCloud Analysis
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🔄 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🛠️ Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Install dependencies (backend & frontend)
         run: |
           cd backend && npm ci
           cd ../frontend && npm ci
@@ -34,12 +64,11 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   notify-render:
-    name: 🚀 Notify Render
-    runs-on: ubuntu-latest
+    name: 🚀 Notify Render or Echo
     needs: sonarcloud
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Trigger Render deploy (or echo)
+      - name: Trigger Render deployment
         run: |
           if [ -n "${{ secrets.RENDER_API_KEY }}" ]; then
             curl -X POST https://api.render.com/deploy/srv-YOUR_SERVICE_ID \
