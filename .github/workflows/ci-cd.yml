@@ -49,7 +49,7 @@ jobs:
         run: npm install --prefix backend
 
       - name: SonarCloud Scan
-        uses: SonarSource/sonarqube-scan-action@v1.2.0
+        uses: SonarSource/sonarqube-scan-action@v2.0.2
         with:
           projectBaseDir: backend
         env:
